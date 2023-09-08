@@ -27,7 +27,17 @@ namespace csharp_typesystem_snacks
                     Console.WriteLine("Scegli due numeri");
                     first = int.Parse(Console.ReadLine());
                     second = int.Parse(Console.ReadLine());
-                      
+                    
+                    if (first > second)
+                    {
+                        Console.WriteLine("Il numero più grande è il primo: " + first);
+                    } else if (second > first)
+                    {
+                        Console.WriteLine("Il numero più grande è il secondo: " + second);
+                    }else
+                    {
+                        Console.WriteLine("I numeri scelti sono uguali.");
+                    }
 
                     break;
                 case 2:
