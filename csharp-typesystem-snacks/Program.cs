@@ -42,6 +42,23 @@ namespace csharp_typesystem_snacks
                     break;
                 case 2:
                     Console.WriteLine("L’utente inserisce due parole in successione. Il software stampa prima la parola più corta, poi la parola più lunga.");
+                    string firstWord;
+                    string secondWord;
+                    Console.WriteLine("Scrivi la prima parola");
+                    firstWord = Console.ReadLine();
+                    Console.WriteLine("Scrivi ora la seconda parola");
+                    secondWord = Console.ReadLine();
+                    if (firstWord.Length < secondWord.Length)
+                    {
+                        Console.WriteLine($"La parola piu piccola è {firstWord}");
+                    } else if(secondWord.Length < firstWord.Length)
+                    {
+                        Console.WriteLine($"La parola più piccola è {secondWord}");
+                    }else
+                    {
+                        Console.WriteLine("Le due parole hanno gli stessi caratteri");
+                    }
+
                     break;
                 case 3:
                     Console.WriteLine("Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.");
