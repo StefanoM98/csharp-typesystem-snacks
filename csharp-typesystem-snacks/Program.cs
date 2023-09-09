@@ -22,18 +22,18 @@ namespace csharp_typesystem_snacks
             {
                 case 1:
                     Console.WriteLine("L’utente inserisce due numeri in successione. Il software stampa il maggiore");
-                    int first;
-                    int second;
+                    int primo;
+                    int secondo;
                     Console.WriteLine("Scegli due numeri");
-                    first = int.Parse(Console.ReadLine());
-                    second = int.Parse(Console.ReadLine());
+                    primo = int.Parse(Console.ReadLine());
+                    secondo = int.Parse(Console.ReadLine());
                     
-                    if (first > second)
+                    if (primo > secondo)
                     {
-                        Console.WriteLine("Il numero più grande è il primo: " + first);
-                    } else if (second > first)
+                        Console.WriteLine("Il numero più grande è il primo: " + primo);
+                    } else if (secondo > primo)
                     {
-                        Console.WriteLine("Il numero più grande è il secondo: " + second);
+                        Console.WriteLine("Il numero più grande è il secondo: " + secondo);
                     }else
                     {
                         Console.WriteLine("I numeri scelti sono uguali.");
@@ -78,15 +78,15 @@ namespace csharp_typesystem_snacks
                     int totaleSomma = 0;
                     int numeroMinimo = 2;
                     int numeroMaximo = 10;
-                    int numeri = 1;
+                    int numeriTotali = 1;
 
                     for (int i = numeroMinimo; i<=numeroMaximo; i++)
                     {
                         totaleSomma = totaleSomma + i;
-                        numeri++;
+                        numeriTotali++;
                     }
 
-                    mediaNumeri = (float)totaleSomma / (float)numeri;
+                    mediaNumeri = (float)totaleSomma / (float)numeriTotali;
                     Console.WriteLine($"La somma dei numeri è {totaleSomma}");
                     Console.WriteLine($"Mentre la media di questo numero è {mediaNumeri}");
                     break;
@@ -123,9 +123,40 @@ namespace csharp_typesystem_snacks
                     break;
                 case 7:
                     Console.WriteLine("Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.");
+                    int[] numeri = new int[6];
+                    int posizione = 0;
+                    for (int i = 0; i < numeri.Length; i++)
+                    {
+                        Console.WriteLine($"Inserisci {numeri.Length} numeri. {i + 1}°");
+                        int numeriScelti = int.Parse(Console.ReadLine());
+                        
+                        if (numeriScelti % 2 == 1){
+                            numeri[posizione] = numeriScelti;
+                            posizione++;
+                        }
+                    }
+
+                    Console.WriteLine($"Ecco i tuoi numeri dispari");
+                    for (int i = 0; i < numeri.Length; i++)
+                    {
+                        Console.WriteLine(numeri[i]);
+                    }
+
                     break;
                 case 8:
                     Console.WriteLine("Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari.");
+                    int[] array = { 1, 2, 3, 4, 5, 6 };
+                    int dispari = 0;
+
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        if (i % 2 == 1)
+                            dispari += array[i];
+ 
+                    }
+
+                    Console.WriteLine($"La somma dei numeri i posizione pari è {dispari} ");
+
                     break;
                 case 9:
                     Console.WriteLine("Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.Continua a chiedere i numeri all’utente e a inserirli nell’array, fino a quando la somma degli elementi è minore di 50.");
