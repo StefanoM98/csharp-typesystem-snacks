@@ -74,12 +74,52 @@ namespace csharp_typesystem_snacks
                     break;
                 case 4:
                     Console.WriteLine("Calcola la somma e la media dei numeri da 2 a 10.");
+                    float mediaNumeri;
+                    int totaleSomma = 0;
+                    int numeroMinimo = 2;
+                    int numeroMaximo = 10;
+                    int numeri = 1;
+
+                    for (int i = numeroMinimo; i<=numeroMaximo; i++)
+                    {
+                        totaleSomma = totaleSomma + i;
+                        numeri++;
+                    }
+
+                    mediaNumeri = (float)totaleSomma / (float)numeri;
+                    Console.WriteLine($"La somma dei numeri è {totaleSomma}");
+                    Console.WriteLine($"Mentre la media di questo numero è {mediaNumeri}");
                     break;
                 case 5:
                     Console.WriteLine("Il software chiede all’utente di inserire un numero. Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo.");
+                    int numeroUtente;
+                    Console.WriteLine("Scrivi ora un numero.");
+                    numeroUtente = int.Parse(Console.ReadLine());
+                    if (numeroUtente % 2 == 0)
+                    {
+                        Console.WriteLine($"Il tuo numero è pari: {numeroUtente}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Ci dispiace, i numeri dispari non sono ammessi per questo ti stampo un numero pari cioè {numeroUtente + 1}");
+                    }
                     break;
+
                 case 6:
                     Console.WriteLine("In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby. Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.");
+                    string[] invitatiAllaFesta = {"Stefano", "Giulia", "Ilaria", "Antonio", "Alessandra"};
+                    string nomeInvitato;
+                    Console.WriteLine("Dimmi il tuo nome, controllo se è in lista");
+                    nomeInvitato = Console.ReadLine();
+                    bool exist = Array.Exists(invitatiAllaFesta, element => element == nomeInvitato);
+                    if (exist)
+                    {
+                        Console.WriteLine("Prego può entrare");
+                    } else
+                    {
+                        Console.WriteLine("Non puoi mi spiace");
+                    }
+                   
                     break;
                 case 7:
                     Console.WriteLine("Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.");
