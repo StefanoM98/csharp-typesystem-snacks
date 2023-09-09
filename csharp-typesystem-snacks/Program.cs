@@ -62,6 +62,15 @@ namespace csharp_typesystem_snacks
                     break;
                 case 3:
                     Console.WriteLine("Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti.");
+                    int sommaTotale = 0;
+                    Console.WriteLine("Scrivi ora i dieci numeri che hai scelto");
+                    for (int i = 0; i < 10; i++)
+                    {
+                        Console.WriteLine($"Scrivi ora il {i + 1}° numero");
+                        sommaTotale = sommaTotale + int.Parse(Console.ReadLine());
+                    }
+
+                    Console.WriteLine($"La somma dei numeri che hai inserito è {sommaTotale}");
                     break;
                 case 4:
                     Console.WriteLine("Calcola la somma e la media dei numeri da 2 a 10.");
